@@ -26,17 +26,11 @@
    <link href="{{ asset('assets/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
    <link href="{{ asset('assets/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
    <link href="{{ asset('assets/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
    <!-- Template Main CSS File -->
    <link href="{{ asset('assets/assets/css/style.css') }}" rel="stylesheet">
 
-   <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -46,15 +40,11 @@
       <div class="container d-flex align-items-center">
 
          <h1 class="logo me-auto"><a href="index.html">The Libraries</a></h1>
-         <!-- Uncomment below if you prefer to use an image logo -->
-         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
          <nav id="navbar" class="navbar">
             <ul>
                <li><a class="nav-link scrollto active" href="/">Home</a></li>
                <li><a class="nav-link scrollto" href="#about">About</a></li>
-               <li><a class="nav-link scrollto" href="#services">Services</a></li>
-               {{-- <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li> --}}
+               <li><a class="nav-link scrollto" href="#services">Bennefits</a></li>
                <li><a class="nav-link scrollto" href="#team">Team</a></li>
                <li class="dropdown"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
                   <ul>
@@ -72,7 +62,7 @@
                   </ul>
                </li>
                <li><a class="nav-link scrollto" href="#contact">Alamat</a></li>
-               <li><a class="getstarted scrollto" href="{{ url('/login') }}">Get Started</a></li>
+               <li><a class="getstarted scrollto" href="{{ url('/register') }}">Get Started</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
          </nav><!-- .navbar -->
@@ -90,7 +80,7 @@
                <h1>Website Perpustakaan</h1>
                <h2>Anda Dapat Meningkati Pengalaman Anda dalam membaca</h2>
                <div class="d-flex justify-content-center justify-content-lg-start">
-                  <a href="{{ url('/login') }}" class="btn-get-started scrollto">Get Started</a>
+                  <a href="{{ url('/register') }}" class="btn-get-started scrollto">Get Started</a>
 
                </div>
             </div>
@@ -160,7 +150,7 @@
                         <li>
                            <a data-bs-toggle="collapse" class="collapse"
                               data-bs-target="#accordion-list-1"><span>01</span> Login Atau Register
-                              urna duis? <i class="bx bx-chevron-down icon-show"></i><i
+                              <i class="bx bx-chevron-down icon-show"></i><i
                                  class="bx bx-chevron-up icon-close"></i></a>
                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                               <p>
@@ -281,18 +271,18 @@
          <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-               <h2>Services</h2>
-               <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                  consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                  fugiat sit in iste officiis commodi quidem hic quas.</p>
+               <h2>Bennefit</h2>
+               <p>Apa saja sih yang kalian dapatkan dengan mengunakan Web kami??</p>
             </div>
 
             <div class="row">
                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon-box">
-                     <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                     <h4><a href="">Lorem Ipsum</a></h4>
-                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                     <div class="icon"><i class="bi bi-clock"></i></div>
+                     <h4><a href="">Waktu</a></h4>
+                     <p>Dengan memilih mengunakan Website kami, kalian akan mengetahui info tentang buku-buku yang ada
+                        di Perpustakaan kami. Kalian bisa mengunakan waktu lebih effisien dan juga cepat dalam pemilihan
+                        buku tanpa datang langsung ke Perpustakaan kami.</p>
                   </div>
                </div>
 
@@ -300,7 +290,7 @@
                   data-aos-delay="200">
                   <div class="icon-box">
                      <div class="icon"><i class="bx bx-file"></i></div>
-                     <h4><a href="">Sed ut perspici</a></h4>
+                     <h4><a href=""></a></h4>
                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                   </div>
                </div>
@@ -309,7 +299,7 @@
                   data-aos-delay="300">
                   <div class="icon-box">
                      <div class="icon"><i class="bx bx-tachometer"></i></div>
-                     <h4><a href="">Magni Dolores</a></h4>
+                     <h4><a href="">Akurat</a></h4>
                      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                   </div>
                </div>
@@ -318,7 +308,7 @@
                   data-aos-delay="400">
                   <div class="icon-box">
                      <div class="icon"><i class="bx bx-layer"></i></div>
-                     <h4><a href="">Nemo Enim</a></h4>
+                     <h4><a href=""></a></h4>
                      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                   </div>
                </div>
@@ -581,157 +571,7 @@
          </div>
       </section><!-- End Team Section -->
 
-      <!-- ======= Pricing Section ======= -->
-      {{-- <section id="pricing" class="pricing">
-         <div class="container" data-aos="fade-up">
 
-            <div class="section-title">
-               <h2>Pricing</h2>
-               <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                  consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                  fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
-
-            <div class="row">
-
-               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                  <div class="box">
-                     <h3>Free Plan</h3>
-                     <h4><sup>$</sup>0<span>per month</span></h4>
-                     <ul>
-                        <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                        <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                        <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                        <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                        <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                     </ul>
-                     <a href="#" class="buy-btn">Get Started</a>
-                  </div>
-               </div>
-
-               <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-                  <div class="box featured">
-                     <h3>Business Plan</h3>
-                     <h4><sup>$</sup>29<span>per month</span></h4>
-                     <ul>
-                        <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                        <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                        <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                        <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                        <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                     </ul>
-                     <a href="#" class="buy-btn">Get Started</a>
-                  </div>
-               </div>
-
-               <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                  <div class="box">
-                     <h3>Developer Plan</h3>
-                     <h4><sup>$</sup>49<span>per month</span></h4>
-                     <ul>
-                        <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                        <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                        <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                        <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                        <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                     </ul>
-                     <a href="#" class="buy-btn">Get Started</a>
-                  </div>
-               </div>
-
-            </div>
-
-         </div>
-      </section>
-      <!-- End Pricing Section --> --}}
-
-      <!-- ======= Frequently Asked Questions Section ======= -->
-      {{-- <section id="faq" class="faq section-bg">
-         <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-               <h2>Frequently Asked Questions</h2>
-               <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                  consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                  fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
-
-            <div class="faq-list">
-               <ul>
-                  <li data-aos="fade-up" data-aos-delay="100">
-                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                        data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                           class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                     <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                        <p>
-                           Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                           curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                        </p>
-                     </div>
-                  </li>
-
-                  <li data-aos="fade-up" data-aos-delay="200">
-                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                        data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
-                           class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                     <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                           Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                           laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                           Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                           tincidunt dui.
-                        </p>
-                     </div>
-                  </li>
-
-                  <li data-aos="fade-up" data-aos-delay="300">
-                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                        data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
-                           class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                     <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                           Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                           elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                           pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
-                           elementum eu facilisis sed odio morbi quis
-                        </p>
-                     </div>
-                  </li>
-
-                  <li data-aos="fade-up" data-aos-delay="400">
-                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                        data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et
-                        tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                           class="bx bx-chevron-up icon-close"></i></a>
-                     <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                           Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante
-                           in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                           bibendum est. Purus gravida quis blandit turpis cursus in.
-                        </p>
-                     </div>
-                  </li>
-
-                  <li data-aos="fade-up" data-aos-delay="500">
-                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                        data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel
-                        pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i
-                           class="bx bx-chevron-up icon-close"></i></a>
-                     <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                           Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer
-                           malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor
-                           sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                        </p>
-                     </div>
-                  </li>
-
-               </ul>
-            </div>
-
-         </div>
-      </section>
-      <!-- End Frequently Asked Questions Section --> --}}
 
       <!-- ======= Contact Section ======= -->
       <section id="contact" class="contact">
