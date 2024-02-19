@@ -45,12 +45,19 @@ Route::get('/form-book', function () {
 Route::get('/form-kategori', function () {
     return view('form.kategori');
 });
+Route::get('/form-kategori-edit', function () {
+    return view('form.kategori_edit');
+});
 Route::get('/form-stock', function () {
     return view('form.stock');
 });
 Route::get('/akun', function () {
     return view('akun.akun');
 });
+Route::get('/form-akun', function () {
+    return view('form.akun');
+});
 
 
 Route::resource('kategori', KategoriController::class);
+Route::resource('akun', UserController::class);

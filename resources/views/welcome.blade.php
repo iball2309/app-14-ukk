@@ -62,7 +62,7 @@
                   </ul>
                </li>
                <li><a class="nav-link scrollto" href="#contact">Alamat</a></li>
-               <li><a class="getstarted scrollto" href="{{ url('/register') }}">Get Started</a></li>
+               <li><a class="getstarted scrollto" href="{{ url('/dashboard') }}">Get Started</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
          </nav><!-- .navbar -->
@@ -80,7 +80,7 @@
                <h1>Website Perpustakaan</h1>
                <h2>Anda Dapat Meningkati Pengalaman Anda dalam membaca</h2>
                <div class="d-flex justify-content-center justify-content-lg-start">
-                  <a href="{{ url('/register') }}" class="btn-get-started scrollto">Get Started</a>
+                  <a href="{{ url('/dashboard') }}" class="btn-get-started scrollto">Get Started</a>
 
                </div>
             </div>

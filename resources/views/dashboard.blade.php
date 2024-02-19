@@ -38,27 +38,6 @@
                               <i class="bi bi-trash-fill"></i>
                            </td>
                         </tr>
-                        <tr>
-                           <th scope="row">2</th>
-                           <td>Jacob</td>
-                           <td>Thornton</td>
-                           <td>@fat</td>
-                           <td>
-                              <i class="bi bi-pencil-fill"></i>
-                              <i class="bi bi-eye-fill"></i>
-                              <i class="bi bi-trash-fill"></i>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row">3</th>
-                           <td colspan="2">Larry the Bird</td>
-                           <td>@twitter</td>
-                           <td>
-                              <i class="bi bi-pencil-fill"></i>
-                              <i class="bi bi-eye-fill"></i>
-                              <i class="bi bi-trash-fill"></i>
-                           </td>
-                        </tr>
                      </tbody>
                   </table>
                </div>
@@ -66,23 +45,23 @@
                   <div class="card">
                      <div class="card-body py-4 px-4">
                         <div class="d-flex align-items-center">
-                           <div class="avatar avatar-xl">
+                           {{-- <div class="avatar avatar-xl">
                               <img src="{{ asset('template/assets/compiled/jpg/1.jpg') }}" alt="Face 1">
-                           </div>
+                           </div> --}}
                            <div class="ms-3 name">
                               <h5 class="font-bold">Hai {{ Auth::user()->name }}</h5>
-                              {{-- <h5 class="font-bold">{{ Auth::user()->role->name }}</h5> --}}
-                              <a class="btn btn-danger" href="{{ route('logout') }}"
-                                 onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                                 Log Out
-                              </a>
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                 @csrf
-                              </form>
+                              <h5 class="font-bold">{{ Auth::user()->role->name }}</h5>
                            </div>
                         </div>
                      </div>
+                     <a class="btn btn-danger" style="text-align: center" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        Log Out
+                     </a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                     </form>
                   </div>
                </div>
             </section>
