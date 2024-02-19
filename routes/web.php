@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,10 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Auth::routes();
+
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,8 +39,18 @@ Route::get('/stock', function () {
 Route::get('/kategori', function () {
     return view('buku.kategori');
 });
+Route::get('/form-book', function () {
+    return view('form.book');
+});
+Route::get('/form-kategori', function () {
+    return view('form.kategori');
+});
+Route::get('/form-stock', function () {
+    return view('form.stock');
+});
+Route::get('/akun', function () {
+    return view('akun.akun');
+});
 
-Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-
+Route::resource('kategori', KategoriController::class);

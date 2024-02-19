@@ -13,6 +13,11 @@
          <div class="page-heading">
             <h3>Table Buku</h3>
          </div>
+         <div class="row mb-3">
+            <div class="col-md-6">
+               <a href="{{ url('/form-book') }}" class="btn btn-primary ">Tambah</a>
+            </div>
+         </div>
          <div class="page-content">
             <section class="row">
                <div class="col-12 col-lg-9">

@@ -113,13 +113,13 @@
                   <li class="sidebar-item  has-sub">
                      <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
-                        <span>Extra Components</span>
+                        <span>User</span>
                      </a>
 
                      <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                           <a href="extra-component-avatar.html" class="submenu-link">Avatar</a>
+                           <a href="{{ url('/akun') }}" class="submenu-link">Akun</a>
 
                         </li>
 
@@ -127,33 +127,8 @@
                            <a href="extra-component-divider.html" class="submenu-link">Divider</a>
 
                         </li>
-
-                        <li class="submenu-item  ">
-                           <a href="extra-component-date-picker.html" class="submenu-link">Date Picker</a>
-
-                        </li>
-
-                        <li class="submenu-item  ">
-                           <a href="extra-component-sweetalert.html" class="submenu-link">Sweet Alert</a>
-
-                        </li>
-
-                        <li class="submenu-item  ">
-                           <a href="extra-component-toastify.html" class="submenu-link">Toastify</a>
-
-                        </li>
-
-                        <li class="submenu-item  ">
-                           <a href="extra-component-rating.html" class="submenu-link">Rating</a>
-
-                        </li>
-
                      </ul>
-
-
                   </li>
-
-               </ul>
             </div>
          </div>
       </div>
