@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,17 @@ Route::get('/book', function () {
 Route::get('/gadis_kretek', function () {
     return view('books.gadis_kretek');
 });
+Route::get('/buku', function () {
+    return view('buku.book');
+});
+Route::get('/stock', function () {
+    return view('buku.stock');
+});
+Route::get('/kategori', function () {
+    return view('buku.kategori');
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
