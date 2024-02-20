@@ -15,7 +15,7 @@
          </div>
          <div class="row mb-3">
             <div class="col-md-6">
-               <a href="{{ url('/form-kategori') }}" class="btn btn-primary ">Tambah</a>
+               <a href="{{ route('kategori.create') }}" class="btn btn-primary ">Tambah</a>
             </div>
          </div>
          <div class="page-content">
@@ -24,6 +24,8 @@
                   <table class="table">
                      <thead>
                         <tr>
+
+                           <th scope="col">#</th>
                            <th scope="col">Nama</th>
                            <th scope="col">Action</th>
                         </tr>
@@ -32,8 +34,12 @@
                      
                      ?>
                      <tbody>
+                        @php
+                           $no = 1;
+                        @endphp
                         @foreach ($kategories as $item)
                            <tr>
+                              <td>{{ $no++ }}</td>
                               <td>{{ $item->name }}</td>
                               <td>
                                  <form onsubmit="return confirm('Apakah Anda Yakin?')"

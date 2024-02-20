@@ -11,11 +11,11 @@
          </header>
 
          <div class="page-heading">
-            <h3>Table Stock</h3>
+            <h3>Table Buku</h3>
          </div>
          <div class="row mb-3">
             <div class="col-md-6">
-               <a href="{{ url('/form-stock') }}" class="btn btn-primary ">Tambah</a>
+               <a href="{{ route('buku.create') }}" class="btn btn-primary ">Tambah</a>
             </div>
          </div>
          <div class="page-content">
@@ -27,48 +27,35 @@
                            <th scope="col">#</th>
                            <th scope="col">Cover</th>
                            <th scope="col">Judul</th>
+                           <th scope="col">Kategori</th>
                            <th scope="col">Action</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
-                           <th scope="row">1</th>
-                           <td>Mark</td>
-                           <td>Otto</td>
-                           <td>
-                              <a href="{{ url('/form-book') }}" class="btn btn-primary"><i class="bi bi-eye-fill"></i>
-                                 Detail</a>
-                              <a href="{{ url('/delete') }}" class="btn btn-danger"><i class="bi bi-trash-fill"></i>
-                                 Hapus</a>
-                              <a href="{{ url('edit-form') }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i>
-                                 Edit</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row">2</th>
-                           <td>Jacob</td>
-                           <td>Thornton</td>
-                           <td>
-                              <a href="{{ url('/form-book') }}" class="btn btn-primary"><i class="bi bi-eye-fill"></i>
-                                 Detail</a>
-                              <a href="{{ url('/delete') }}" class="btn btn-danger"><i class="bi bi-trash-fill"></i>
-                                 Hapus</a>
-                              <a href="{{ url('edit-form') }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i>
-                                 Edit</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row">3</th>
-                           <td colspan="2">Larry the Bird</td>
-                           <td>
-                              <a href="{{ url('/form-book') }}" class="btn btn-primary"><i class="bi bi-eye-fill"></i>
-                                 Detail</a>
-                              <a href="{{ url('/delete') }}" class="btn btn-danger"><i class="bi bi-trash-fill"></i>
-                                 Hapus</a>
-                              <a href="{{ url('edit-form') }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i>
-                                 Edit</a>
-                           </td>
-                        </tr>
+                        @php
+                           $no = 1;
+                        @endphp
+                        @foreach ($books as $item)
+                           <tr>
+                              <td>{{ $no++ }}</td>
+                              <td class="center">
+                                 <img src="{{ asset('storage/books/' . $item->cover) }}" class="rounded"
+                                    style="width: 150px" alt="">
+                              </td>
+                              <td>{{ $item->judul }}</td>
+                              <td>{{ $item->kategori_id }}</td>
+                              <td>
+                                 <form onsubmit="return confirm('Apakah Anda Yakin?')"
+                                    action="{{ route('buku.destroy', $item->id) }}" method="POST">
+                                    <a href="{{ route('buku.show', $item->id) }}" class="btn btn-success">Show</a>
+                                    <a href="{{ route('buku.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                 </form>
+                              </td>
+                           </tr>
+                        @endforeach
                      </tbody>
                   </table>
                </div>
@@ -84,7 +71,7 @@
                               {{-- <h5 class="font-bold">{{ Auth::user()->role->name }}</h5> --}}
                               <a class="btn btn-danger" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
+                                 document.getElementById('logout-form').submit();">
                                  Log Out
                               </a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

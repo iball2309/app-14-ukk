@@ -11,17 +11,16 @@
          </header>
          <div class="container">
             <div class="page-heading">
-               <h3>Form Kategori</h3>
+               <h3>Form Buku</h3>
             </div>
-            <form action="{{ route('kategori.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('buku.edit', $book->id) }}" method="post">
                @csrf
+               @method('PUT')
                <div class="form-group">
-                  <label class="font-weight-bold">Nama</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                     value="{{ old('name') }}" placeholder="Masukkan Nama Kategori">
-
-
-                  @error('name')
+                  <label class="font-weight-bold">Judul</label>
+                  <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
+                     value="{{ old('judul', $book->judul) }}" placeholder="Masukkan Nama Kategori">
+                  @error('judul')
                      <div class="alert alert-danger mt-2">
                         {{ $message }}
                      </div>
@@ -31,7 +30,7 @@
                <div class="row mb-3">
                   <div class="col-md-6">
                      <button type="submit" class="btn btn-primary">Simpan</button>
-                     <a href="{{ url('/kategori') }}" class="btn btn-danger" style="margin-left: 10px">Back</a>
+                     <a href="{{ url('/buku') }}" class="btn btn-danger" style="margin-left: 10px">Back</a>
                   </div>
                </div>
             </form>

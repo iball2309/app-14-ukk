@@ -6,6 +6,7 @@ use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\File;
 
 class RoleSeeder extends Seeder
 {
@@ -14,11 +15,12 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-      DB::table('roles')->insert(
-        [
-        'id' => '1',
-        'name' => 'admin'
-        ]
-    );
+     $json = File::get("database/data/roles.json");
+     $data = json_decode($json);
+     foreach ($data as $obj) {
+      Role::create(array(
+      'name' =>$obj->name
+      ));
+     }
     }
 }

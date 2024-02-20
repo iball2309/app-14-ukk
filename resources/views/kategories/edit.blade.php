@@ -13,14 +13,13 @@
             <div class="page-heading">
                <h3>Form Kategori</h3>
             </div>
-            <form action="{{ route('kategori.store') }}" method="post">
+            <form action="{{ route('kategori.edit', $kategori->id) }}" method="post">
                @csrf
+               @method('PUT')
                <div class="form-group">
                   <label class="font-weight-bold">Nama</label>
                   <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                     value="{{ old('name') }}" placeholder="Masukkan Nama Kategori">
-
-
+                     value="{{ old('name', $kategori->name) }}" placeholder="Masukkan Nama Kategori">
                   @error('name')
                      <div class="alert alert-danger mt-2">
                         {{ $message }}

@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function index(){
         $users = User::latest()->paginate(5);
-        return view('akun.akun', compact ('users'));
+        return view('akun.index', compact ('users'));
     }
 }

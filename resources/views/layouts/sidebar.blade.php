@@ -98,11 +98,11 @@
                         </li>
 
                         <li class="submenu-item  ">
-                           <a href="{{ url('/stock') }}" class="submenu-link">Stock Buku</a>
+                           <a href="{{ url('/stock') }}" class="submenu-link">Buku Dipinjam</a>
 
                         </li>
                         <li class="submenu-item  ">
-                           <a href="{{ url('/kategori') }}" class="submenu-link">Kategori Buku</a>
+                           <a href="{{ route('kategori.index') }}" class="submenu-link">Kategori Buku</a>
 
                         </li>
                      </ul>

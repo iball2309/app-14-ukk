@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -27,37 +28,8 @@ Route::get('/', function () {
 Route::get('/book', function () {
     return view('book');
 });
-Route::get('/gadis_kretek', function () {
-    return view('books.gadis_kretek');
-});
-Route::get('/buku', function () {
-    return view('buku.book');
-});
-Route::get('/stock', function () {
-    return view('buku.stock');
-});
-Route::get('/kategori', function () {
-    return view('buku.kategori');
-});
-Route::get('/form-book', function () {
-    return view('form.book');
-});
-Route::get('/form-kategori', function () {
-    return view('form.kategori');
-});
-Route::get('/form-kategori-edit', function () {
-    return view('form.kategori_edit');
-});
-Route::get('/form-stock', function () {
-    return view('form.stock');
-});
-Route::get('/akun', function () {
-    return view('akun.akun');
-});
-Route::get('/form-akun', function () {
-    return view('form.akun');
-});
 
 
 Route::resource('kategori', KategoriController::class);
+Route::resource('buku', BookController::class);
 Route::resource('akun', UserController::class);

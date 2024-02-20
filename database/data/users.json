@@ -1,0 +1,20 @@
+[
+    {
+        "name" : "Walter White",
+        "email" : "admin@gmail.com",
+        "password" : "P@ssw0rd",
+        "role_id" : "1"
+    },
+    {
+        "name" : "Walter White",
+        "email" : "petugas@gmail.com",
+        "password" : "P@ssw0rd",
+        "role_id" : "2"
+    },
+    {
+        "name" : "Walter White",
+        "email" : "peminjam@gmail.com",
+        "password" : "P@ssw0rd",
+        "role_id" : "3"
+    }
+]

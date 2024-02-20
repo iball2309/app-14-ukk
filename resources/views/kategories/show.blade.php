@@ -14,18 +14,14 @@
                            <table class="table">
                               <thead>
                                  <tr>
-
                                     <th scope="col">Nama</th>
                                     <th scope="col">Dibuat</th>
-
                                  </tr>
                               </thead>
                               <tbody>
                                  <tr>
-
                                     <td>{{ $kategori->name }}</td>
                                     <td>{{ $kategori->created_at }}</td>
-
                                  </tr>
                               </tbody>
                            </table>
