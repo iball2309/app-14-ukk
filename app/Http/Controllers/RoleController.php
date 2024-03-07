@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Role;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class RoleController extends Controller
 {
-
     // hak akses
     public function __construct()
     {
@@ -18,14 +17,14 @@ class KategoriController extends Controller
     // insert
     public function index(): View
     {
-        $kategories = Kategori::latest()->paginate(15);
-        return view('kategories.index', compact('kategories'));
+        $roles = Role::latest()->paginate(5);
+        return view('role.index', compact('roles'));
     }
 
     // create
     public function create(): View
     {
-        return view('kategories.create');
+        return view('role.create');
     }
 
     public function store(Request $request): RedirectResponse
@@ -34,24 +33,24 @@ class KategoriController extends Controller
             'name' => 'required'
         ]);
 
-        Kategori::create([
+        Role::create([
             'name' => $request->name
         ]);
-        return redirect()->route('kategori.index')->with(['success', 'data berhasil']);
+        return redirect()->route('role.index')->with(['success', 'data berhasil']);
     }
     // detail
     public function show(string $id): View
     {
-        $kategori = Kategori::findOrFail($id);
+        $role = Role::findOrFail($id);
 
-        return view('kategories.show', compact('kategori'));
+        return view('role.show', compact('role'));
     }
     // edit
     public function edit(string $id): View
     {
 
-        $kategori = Kategori::findOrFail($id);
-        return view('kategories.edit', compact('kategori'));
+        $role = Role::findOrFail($id);
+        return view('role.edit', compact('role'));
     }
 
     public function update(Request $request, $id): RedirectResponse
@@ -60,25 +59,25 @@ class KategoriController extends Controller
             'name' => 'required'
         ]);
 
-        $kategori = Kategori::findOrFail($id);
+        $role = Role::findOrFail($id);
 
         if ($request) {
-            $kategori->update([
+            $role->update([
                 'name' => $request->name
             ]);
         } else {
-            $kategori->update([
+            $role->update([
                 'name' => $request->name
             ]);
-            return redirect()->route('kategories.index')->with(['success', 'data berhasil']);
+            return redirect()->route('role.index')->with(['success', 'data berhasil']);
         }
     }
     // delete
     public function destroy($id): RedirectResponse
     {
-        $kategori = Kategori::findOrFail($id);
-        $kategori->delete();
+        $role = Role::findOrFail($id);
+        $role->delete();
 
-        return redirect()->route('kategori.index')->with(['success', 'data berhasil']);
+        return redirect()->route('role.index')->with(['success', 'data berhasil']);
     }
 }

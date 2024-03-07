@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('penerbit');
             $table->date('tahun_terbit');
             $table->string('cover');
-            $table->integer('kategori_id')->default(3);
+            $table->integer('kategori_id');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

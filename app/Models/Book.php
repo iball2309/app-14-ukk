@@ -15,9 +15,15 @@ class Book extends Model
         'penerbit',
         'tahun_terbit',
         'cover',
-        'categori_id',
+        'kategori_id',
+        'stock',
     ];
-    public function kategoris(){
-        return $this->belongsTo(Kategori::class);
+    public function kategories()
+    {
+        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
+    }
+    public function peminjaman()
+    {
+        return $this->belongsTo(Peminjaman::class);
     }
 }

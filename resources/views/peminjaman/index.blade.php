@@ -11,11 +11,12 @@
       </header>
 
       <div class="page-heading">
-        <h3>Table Buku</h3>
+        <h3>Table Peminjaman</h3>
       </div>
       <div class="row mb-3">
         <div class="col-md-6">
-          <a href="{{ route('buku.create') }}" class="btn btn-primary ">Tambah</a>
+          <a href="{{ route('peminjaman.create') }}" class="btn btn-primary ">Tambah</a>
+          <a href="{{ url('/print') }}" class="btn btn-success ">Print</a>
         </div>
       </div>
       <div class="page-content">
@@ -26,29 +27,29 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Cover</th>
-                  <th scope="col">Judul</th>
+                  <th scope="col">Jumlah Pinjam</th>
+                  <th scope="col">Buku</th>
                   <th scope="col">Kategori</th>
-                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
                 @php
                   $no = 1;
                 @endphp
-                @foreach ($books as $item)
+                @foreach ($peminjamans as $item)
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td class="center">
-                      <img src="{{ asset('storage/books/' . $item->cover) }}" class="rounded" style="width: 150px"
-                        alt="">
+                    <td>
+                      <img src="{{ asset('storage/books/' . optional($item->books)->cover) }}" class="rounded"
+                        style="width: 150px" alt="">
                     </td>
-                    <td>{{ $item->judul }}</td>
-                    <td>{{ $item->kategories->name }}</td>
+                    <td>{{ $item->jp }}</td>
+                    <td>{{ optional($item->books)->judul }}</td>
                     <td>
                       <form onsubmit="return confirm('Apakah Anda Yakin?')"
-                        action="{{ route('buku.destroy', $item->id) }}" method="POST">
-                        <a href="{{ route('buku.show', $item->id) }}" class="btn btn-success">Show</a>
-                        <a href="{{ route('buku.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        action="{{ route('peminjaman.destroy', $item->id) }}" method="POST">
+                        <a href="{{ route('peminjaman.show', $item->id) }}" class="btn btn-success">Show</a>
+                        <a href="{{ route('peminjaman.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>

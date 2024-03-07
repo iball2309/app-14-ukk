@@ -11,9 +11,9 @@
       </header>
       <div class="container">
         <div class="page-heading">
-          <h3>Form Kategori</h3>
+          <h3>Form Role</h3>
         </div>
-        <form action="{{ route('kategori.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('role.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label class="font-weight-bold">Nama</label>

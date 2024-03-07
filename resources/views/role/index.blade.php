@@ -11,44 +11,41 @@
       </header>
 
       <div class="page-heading">
-        <h3>Table Buku</h3>
+        <h3>Table Role</h3>
       </div>
       <div class="row mb-3">
         <div class="col-md-6">
-          <a href="{{ route('buku.create') }}" class="btn btn-primary ">Tambah</a>
+          <a href="{{ route('role.create') }}" class="btn btn-primary ">Tambah</a>
         </div>
       </div>
       <div class="page-content">
         <section class="row">
-          <div class="col-12">
+          <div class="col-12 col-lg-9">
             <table class="table">
               <thead>
                 <tr>
+
                   <th scope="col">#</th>
-                  <th scope="col">Cover</th>
-                  <th scope="col">Judul</th>
-                  <th scope="col">Kategori</th>
+                  <th scope="col">Nama</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
+              <?php
+
+              ?>
               <tbody>
                 @php
                   $no = 1;
                 @endphp
-                @foreach ($books as $item)
+                @foreach ($roles as $item)
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td class="center">
-                      <img src="{{ asset('storage/books/' . $item->cover) }}" class="rounded" style="width: 150px"
-                        alt="">
-                    </td>
-                    <td>{{ $item->judul }}</td>
-                    <td>{{ $item->kategories->name }}</td>
+                    <td>{{ $item->name }}</td>
                     <td>
                       <form onsubmit="return confirm('Apakah Anda Yakin?')"
-                        action="{{ route('buku.destroy', $item->id) }}" method="POST">
-                        <a href="{{ route('buku.show', $item->id) }}" class="btn btn-success">Show</a>
-                        <a href="{{ route('buku.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        action="{{ route('kategori.destroy', $item->id) }}" method="POST">
+                        <a href="{{ route('kategori.show', $item->id) }}" class="btn btn-success">Show</a>
+                        <a href="{{ route('kategori.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>
@@ -58,6 +55,7 @@
                 @endforeach
               </tbody>
             </table>
+
           </div>
         </section>
       </div>
