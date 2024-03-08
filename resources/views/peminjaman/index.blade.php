@@ -16,7 +16,7 @@
       <div class="row mb-3">
         <div class="col-md-6">
           <a href="{{ route('peminjaman.create') }}" class="btn btn-primary ">Tambah</a>
-          <a href="{{ url('/print') }}" class="btn btn-success ">Print</a>
+          <a href="{{ url('/print') }}" class="btn btn-success" target="_blank">Cetak</a>
         </div>
       </div>
       <div class="page-content">

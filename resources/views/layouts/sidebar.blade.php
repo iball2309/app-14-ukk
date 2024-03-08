@@ -88,34 +88,39 @@
               </a>
 
               <ul class="submenu ">
+                @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
+                  <li class="submenu-item  ">
+                    <a href="{{ '/buku' }}" class="submenu-link">Buku</a>
+                  </li>
+                @endif
                 <li class="submenu-item  ">
-                  <a href="{{ '/buku' }}" class="submenu-link">Buku</a>
+                  <a href="{{ route('peminjaman.index') }}" class="submenu-link">Pinjam Buku</a>
                 </li>
-                <li class="submenu-item  ">
-                  <a href="{{ route('peminjaman.index') }}" class="submenu-link">Buku Dipinjam</a>
-                </li>
-                <li class="submenu-item  ">
-                  <a href="{{ route('kategori.index') }}" class="submenu-link">Kategori Buku</a>
-
-                </li>
+                @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
+                  <li class="submenu-item  ">
+                    <a href="{{ route('kategori.index') }}" class="submenu-link">Kategori Buku</a>
+                  </li>
+                @endif
               </ul>
             </li>
 
-            <li class="sidebar-item  has-sub">
-              <a href="#" class='sidebar-link'>
-                <i class="bi bi-collection-fill"></i>
-                <span>User</span>
-              </a>
-              <ul class="submenu ">
-                <li class="submenu-item  ">
-                  <a href="{{ url('/akun') }}" class="submenu-link">Akun</a>
-                </li>
-                <li class="submenu-item  ">
-                  <a href="{{ route('role.index') }}" class="submenu-link">Role</a>
+            @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
+              <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                  <i class="bi bi-collection-fill"></i>
+                  <span>User</span>
+                </a>
+                <ul class="submenu ">
+                  <li class="submenu-item  ">
+                    <a href="{{ url('/akun') }}" class="submenu-link">Akun</a>
+                  </li>
+                  <li class="submenu-item  ">
+                    <a href="{{ route('role.index') }}" class="submenu-link">Role</a>
 
-                </li>
-              </ul>
-            </li>
+                  </li>
+                </ul>
+              </li>
+            @endif
         </div>
       </div>
     </div>

@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\BukuTampilController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PrintController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,17 +30,27 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('book', BukuController::class);
+Route::get('/tampil', function () {
+    return view('tampil');
+});
+Route::resource('tampil', BukuTampilController::class);
+
 Route::get('/register-admin', function () {
     return view('auth.register_admin');
 });
 Route::get('/print', function () {
     return view('peminjaman.print');
 });
+Route::resource('buku', BookController::class);
 Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('print', PrintController::class);
     Route::resource('akun', UserController::class);
-    Route::resource('buku', BookController::class);
     Route::resource('role', RoleController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('peminjaman', PeminjamanController::class);
+});
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/home', function () {
+        return view('home');
+    });
 });

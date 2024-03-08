@@ -44,15 +44,33 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="{{ url('/') }}">About</a></li>
-          <li><a class="nav-link scrollto" href="{{ url('/') }}">Bennefits</a></li>
-          <li class="dropdown"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="{{ url('/book') }}">Lihat Semua Buku</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Bennefits</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Alamat</a></li>
-          <li><a class="getstarted scrollto" href="{{ url('/login') }}">Get Started</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/buku') }}">Buku</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/dashboard') }}">Dashboard</a></li>
+          @guest
+            @if (Route::has('login'))
+              <li class="nav-item">
+                <a class="nav-link getstarted scrollto" href="{{ route('register') }}">{{ __('Get Started') }}</a>
+              </li>
+            @endif
+          @else
+            <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }}
+            </a>
+            <div style="color: black">
+              <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </div>
+          @endguest
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -62,7 +80,6 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
@@ -75,7 +92,6 @@
         </div>
       </div>
     </div>
-
   </section><!-- End Hero -->
 
   <main id="main">
