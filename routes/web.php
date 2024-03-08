@@ -49,8 +49,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('kategori', KategoriController::class);
     Route::resource('peminjaman', PeminjamanController::class);
 });
-Route::middleware(['auth', 'user'])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    });
+
+Route::get('/home', function () {
+    return view('home');
 });
