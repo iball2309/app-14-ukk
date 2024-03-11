@@ -80,7 +80,7 @@ class BookController extends Controller
             'penerbit' => 'required',
             'tahun_terbit' => 'required',
             'kategori_id' => 'required',
-            'stocks' => 'required|integer',
+            'stock' => 'required|integer',
         ]);
 
         $book = Book::findOrFail($id);
@@ -110,7 +110,7 @@ class BookController extends Controller
                 'stock' => $request->stock,
             ]);
         }
-        return redirect()->route('buku.index')->with(['succes' => 'data berhasil']);
+        return redirect()->route('buku.index')->with(['success' => 'data berhasil']);
     }
 
     public function destroy($id): RedirectResponse

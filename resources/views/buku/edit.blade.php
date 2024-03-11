@@ -51,6 +51,16 @@
             @enderror
           </div>
           <div class="form-group">
+            <label class="font-weight-bold">Stock</label>
+            <input type="text" class="form-control @error('stock') is-invalid @enderror" name="stock"
+              value="{{ old('stock', $book->stock) }}" placeholder="Masukkan Nama Kategori">
+            @error('stock')
+              <div class="alert alert-danger mt-2">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          <div class="form-group">
             <label class="font-weight-bold">Tahun Terbit</label>
             <input type="date" class="form-control @error('tahun_terbit') is-invalid @enderror" name="tahun_terbit"
               value="{{ old('tahun_terbit', $book->tahun_terbit) }}" placeholder="Masukkan Nama Kategori">
@@ -64,7 +74,6 @@
             <label class="font-weight-bold">Kategori</label>
             <select class="form-select @error('kategori_id') is-invalid @enderror" name="kategori_id"
               aria-label="Default select example">
-              <option value="">-- Select One --</option>
               @foreach ($kategori as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
               @endforeach

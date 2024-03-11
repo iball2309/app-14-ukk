@@ -60,17 +60,10 @@ class RoleController extends Controller
         ]);
 
         $role = Role::findOrFail($id);
-
-        if ($request) {
-            $role->update([
-                'name' => $request->name
-            ]);
-        } else {
-            $role->update([
-                'name' => $request->name
-            ]);
-            return redirect()->route('role.index')->with(['success', 'data berhasil']);
-        }
+        $role->update([
+            'name' => $request->name
+        ]);
+        return redirect()->route('role.index')->with(['success', 'data berhasil']);
     }
     // delete
     public function destroy($id): RedirectResponse

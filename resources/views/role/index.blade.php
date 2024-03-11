@@ -43,9 +43,9 @@
                     <td>{{ $item->name }}</td>
                     <td>
                       <form onsubmit="return confirm('Apakah Anda Yakin?')"
-                        action="{{ route('kategori.destroy', $item->id) }}" method="POST">
-                        <a href="{{ route('kategori.show', $item->id) }}" class="btn btn-success">Show</a>
-                        <a href="{{ route('kategori.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                        action="{{ route('role.destroy', $item->id) }}" method="POST">
+                        <a href="{{ route('role.show', $item->id) }}" class="btn btn-success">Show</a>
+                        <a href="{{ route('role.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>
